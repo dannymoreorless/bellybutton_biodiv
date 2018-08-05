@@ -46,7 +46,9 @@ function buildCharts(sample) {
     var plotdata = [trace];
 
     var layout = {
-      xaxis: { title: "OTU ID"}
+      xaxis: { title: "OTU ID"},
+      title: `Data for Sample #${sample}`
+
     };
 
     Plotly.newPlot("bubble",plotdata,layout)
@@ -56,17 +58,6 @@ function buildCharts(sample) {
     // @TODO: Build a Pie Chart
     // HINT: You will need to use slice() to grab the top 10 sample_values,
     // otu_ids, and labels (10 each). 
-    // function sortByKey(array, key) {
-    //   return data.key.sort(function(a, b) {
-    //       var x = a[key]; var y = b[key];
-    //       return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-    //   });
-    //   }
-      
-    //   sorted_data = sortByKey(data, 'sample_values');
-      
-    //   console.log(sorted_data);
-
 
     console.log(`Top Ten Samples:`)
     console.log(data.sample_values.slice(0,10));
